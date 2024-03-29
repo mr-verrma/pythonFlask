@@ -7,14 +7,9 @@ def hello():
     return 'Hello World!'
 
 
-console.log("hi")
-
 @app.route('/home',methods=['GET'])
 def get_products():
     return "API FETCH CALL"
 
-@app.route('/home',methods=['POST'])
-def get_products():
-    return "API POST CALL"
 if __name__=='__main__':
     app.run(host='0.0.0.0',port=5000)
