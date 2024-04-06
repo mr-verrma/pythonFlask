@@ -37,10 +37,13 @@ class DynamicList:
         result='' 
         for i in range(self.n):
             result=result + str(self.List[i])+','
-        return result
+        return '[' + result[:-1] + ']'
     
-    # def pop(self,item):
-    #     for i in range(self.n,)
+    def pop(self):
+        if self.n==0:
+            return 'EMPTY Err'
+        print(self.List[self.n-1])
+        self.n=self.n-1
 
     def __getitem__(self,index):
         if 0<= index <self.n:
@@ -48,10 +51,23 @@ class DynamicList:
         else:
             return 'Index Error- Index out of range'
         
+
+    def clear(self):
+        self.n=0
+        self.size=1
     
+    def find(self,search):
+        for i in range(self.n):
+            if self.List[i]== search:
+                return i
+            
+        return 'ValueError- Not Found'
 L=DynamicList()
 # print(type(L))
 L.append('abc')
 L.append('abc2')
 L.append(True)
-print(L[200])
+L.append(2)
+
+b=L.find(100)
+print(L,b)
