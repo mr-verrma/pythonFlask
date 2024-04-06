@@ -38,10 +38,20 @@ class DynamicList:
         for i in range(self.n):
             result=result + str(self.List[i])+','
         return result
+    
+    # def pop(self,item):
+    #     for i in range(self.n,)
+
+    def __getitem__(self,index):
+        if 0<= index <self.n:
+            return self.List[index]
+        else:
+            return 'Index Error- Index out of range'
+        
+    
 L=DynamicList()
 # print(type(L))
 L.append('abc')
 L.append('abc2')
 L.append(True)
-
-print(L)
+print(L[200])
