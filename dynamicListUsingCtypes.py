@@ -62,6 +62,15 @@ class DynamicList:
                 return i
             
         return 'ValueError- Not Found'
+
+    def insert(self,pos,item):
+        if self.n==self.size:
+            self.__resize(self.size*2)
+        for i in range(self.n,pos,-1):
+            self.List[i]=self.List[i-1]
+        self.List[pos]=item
+        self.n=self.n+1
+
 L=DynamicList()
 # print(type(L))
 L.append('abc')
@@ -69,5 +78,5 @@ L.append('abc2')
 L.append(True)
 L.append(2)
 
-b=L.find(100)
-print(L,b)
+L.insert(0,2)
+print(L)
