@@ -32,9 +32,16 @@ class DynamicList:
             List2[i]=self.List[i]
         #Assign TO List
         self.List=List2
+
+    def __str__(self):
+        result='' 
+        for i in range(self.n):
+            result=result + str(self.List[i])+','
+        return result
 L=DynamicList()
 # print(type(L))
 L.append('abc')
 L.append('abc2')
 L.append(True)
-print(len(L))
+
+print(L)
